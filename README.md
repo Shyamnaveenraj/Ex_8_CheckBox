@@ -28,24 +28,137 @@ Step 7: Save and run the application.
  ```
 /*
 Program to create an Option Menu
-Developed by: 
-RegisterNumber:  
+Developed by: Easwar J
+RegisterNumber: 212221230024
 */
 ```
 
 ## MainActivity.java:
 
+```
+package com.example.ex_8;
 
+import androidx.appcompat.app.AppCompatActivity;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.Toast;
+import android.os.Bundle;
 
+public class MainActivity extends AppCompatActivity {
+    private CheckBox chkAndroid, chkJava, chkPhp, chkCpp, chkC;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        chkAndroid = findViewById(R.id.chkAndroid);
+        chkJava = findViewById(R.id.chkJava);
+        chkPhp = findViewById(R.id.chkPhp);
+        chkCpp = findViewById(R.id.chkCpp);
+        chkC = findViewById(R.id.chkC);
+    }
+    public void showSelected(View view) {
+
+        String selected = "You selected: \n";
+
+        if(chkAndroid.isChecked())
+            selected += "Android";
+
+        if(chkJava.isChecked())
+            selected += "\nJava";
+
+        if(chkPhp.isChecked())
+            selected += "\nPHP";
+
+        if(chkCpp.isChecked())
+            selected += "\nCPP";
+
+        if(chkC.isChecked())
+            selected += "\nC";
+
+        Toast.makeText(MainActivity.this, selected, Toast.LENGTH_SHORT).show();
+    }
+}
+```
 
 
 ## activity_main.xml:
+```
 
+package com.example.ex_8;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.Toast;
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity {
+    private CheckBox chkAndroid, chkJava, chkPhp, chkCpp, chkC;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        chkAndroid = findViewById(R.id.chkAndroid);
+        chkJava = findViewById(R.id.chkJava);
+        chkPhp = findViewById(R.id.chkPhp);
+        chkCpp = findViewById(R.id.chkCpp);
+        chkC = findViewById(R.id.chkC);
+    }
+    public void showSelected(View view) {
+
+        String selected = "You selected: \n";
+
+        if(chkAndroid.isChecked())
+            selected += "Android";
+
+        if(chkJava.isChecked())
+            selected += "\nJava";
+
+        if(chkPhp.isChecked())
+            selected += "\nPHP";
+
+        if(chkCpp.isChecked())
+            selected += "\nCPP";
+
+        if(chkC.isChecked())
+            selected += "\nC";
+
+        Toast.makeText(MainActivity.this, selected, Toast.LENGTH_SHORT).show();
+    }
+}
+```
 
 ## AndroidMainfest.xml
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Ex_8"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+```
 ## Output
 
+![output](https://github.com/jithendra2004/Ex_8_CheckBox/blob/main/j81.png)
 
 
 ## Result:
